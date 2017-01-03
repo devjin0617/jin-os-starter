@@ -11,7 +11,7 @@ import TaskBar from './TaskBar.vue'
 import StartupList from './StartupList.vue'
 import Store from './store'
 
-Store.setState('isOpen', false);
+
 
 export default {
   name: 'app',
@@ -19,6 +19,9 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  created() {
+    Store.setState('isOpen', false);
   },
   components : {
     StartupList,

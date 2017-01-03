@@ -1,7 +1,9 @@
 <template xmlns:v-bind="http://www.w3.org/1999/xhtml">
-    <div v-if="isOpen">
-        <div class="startup-box">this is template body</div>
-    </div>
+    <transition name="fade">
+        <div v-if="state.isOpen">
+            <div class="startup-box">this is template body</div>
+        </div>
+    </transition>
 </template>
 <style>
     .startup-box {
@@ -11,6 +13,13 @@
         width:500px;
         height:500px;
     }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s
+    }
+    .fade-enter, .fade-leave-active {
+        opacity: 0
+    }
 </style>
 <script>
     import Store from './store'
@@ -18,7 +27,7 @@
     export default{
         data(){
             return{
-                isOpen : Store.state.isOpen
+                state : Store.state
             }
         }
     }

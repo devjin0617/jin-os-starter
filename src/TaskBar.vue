@@ -1,7 +1,11 @@
-<template>
+<template xmlns:v-bind="http://www.w3.org/1999/xhtml">
     <div>
         {{ msg }}
-        <div class="task-bar"></div>
+        <div class="task-bar" style="display:flex;">
+            <div style="width:50px;">
+                <img src="./assets/start_logo.png" style="width:100%;" v-bind:click="onStartup()"/>
+            </div>
+        </div>
     </div>
 </template>
 <style>
@@ -18,6 +22,11 @@
     export default{
         data() {
             return hello
+        },
+        methods : {
+            onStartup : function() {
+                console.log('hello');
+            }
         }
     }
 </script>

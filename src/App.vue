@@ -1,12 +1,17 @@
 <template>
   <div id="app">
     {{ msg }}
+    <StartupList/>
     <TaskBar />
   </div>
 </template>
 
 <script>
 import TaskBar from './TaskBar.vue'
+import StartupList from './StartupList.vue'
+import Store from './store'
+
+Store.setState('isOpen', false);
 
 export default {
   name: 'app',
@@ -16,6 +21,7 @@ export default {
     }
   },
   components : {
+    StartupList,
     TaskBar
   }
 }

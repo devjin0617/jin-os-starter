@@ -7,9 +7,11 @@
 </template>
 
 <script>
+import Store from './store'
+
+
 import TaskBar from './TaskBar.vue'
 import StartupList from './StartupList.vue'
-import Store from './store'
 
 
 

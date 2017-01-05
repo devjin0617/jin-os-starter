@@ -5,6 +5,7 @@
             <div style="width:50px; cursor:pointer;">
                 <img src="./assets/start_logo.png" style="width:100%;" v-on:click="onStartup"/>
             </div>
+            <SearchBar />
         </div>
     </div>
 </template>
@@ -21,6 +22,8 @@
 
     import Store from './store'
 
+    import SearchBar from './SearchBar.vue'
+
     export default{
         data() {
             return hello
@@ -29,6 +32,9 @@
             onStartup : function() {
                 Store.setState('isOpen', !Store.state.isOpen);
             }
+        },
+        components : {
+            SearchBar
         }
     }
 </script>

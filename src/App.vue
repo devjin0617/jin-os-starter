@@ -34,9 +34,32 @@ export default {
 
 <style>
 
-body {
-  background-image:url('./assets/background.jpg');
+body,.startup-box-wrap::before {
+  background:url('./assets/background.jpg') 0 / cover fixed;
   margin:0;
+}
+
+.startup-box-wrap::before {
+  content: '';
+  margin: -35px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: blur(20px);
+  z-index: -1;
+}
+
+.startup-box-wrap {
+  position: relative;
+  background: hsla(0,0%,100%,.3);
+  font-size: 20px;
+  font-family: 'Lora', serif;
+  line-height: 1.5;
+  width: 60%;
+  box-shadow: 5px 3px 30px black;
+  overflow: hidden;
 }
 
 #app {

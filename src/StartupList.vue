@@ -3,7 +3,13 @@
         <div v-if="state.isOpen">
             <div class="startup-box-wrap">
                 <div class="startup-box">
-                    this is template body
+                    <div style="display:flex; height:100%;">
+                        <div style="width:50px; height:100%;"></div>
+                        <div style="flex:1; height:100%;">
+                            <AppList />
+                        </div>
+                        <div style="flex:2.5; height:100%;"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -14,7 +20,7 @@
         position:fixed;
         background-color:black;
         bottom:50px;
-        width:500px;
+        width:700px;
         height:500px;
     }
     .startup-box {
@@ -35,11 +41,16 @@
 <script>
     import Store from './store'
 
+    import AppList from './AppList.vue'
+
     export default{
         data(){
             return{
                 state : Store.state
             }
+        },
+        components: {
+            AppList
         }
     }
 </script>

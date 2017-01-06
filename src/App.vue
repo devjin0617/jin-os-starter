@@ -55,7 +55,6 @@ body,.startup-box-wrap::before {
   position: relative;
   background: hsla(0,0%,100%,.3);
   font-size: 20px;
-  font-family: 'Lora', serif;
   line-height: 1.5;
   width: 60%;
   box-shadow: 5px 3px 30px black;
@@ -63,7 +62,7 @@ body,.startup-box-wrap::before {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

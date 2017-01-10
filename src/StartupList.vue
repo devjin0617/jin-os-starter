@@ -8,7 +8,9 @@
                         <div style="flex:1; height:100%;">
                             <AppList />
                         </div>
-                        <div style="flex:2; height:100%;"></div>
+                        <div style="flex:2; height:100%;">
+                            <TileList />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -42,6 +44,7 @@
     import Store from './store'
 
     import AppList from './AppList.vue'
+    import TileList from './TileList.vue'
 
     export default{
         data(){
@@ -50,7 +53,8 @@
             }
         },
         components: {
-            AppList
+            AppList,
+            TileList
         }
     }
 </script>

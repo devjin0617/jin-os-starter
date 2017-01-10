@@ -8,7 +8,7 @@
                         <div style="flex:1; height:100%;">
                             <AppList />
                         </div>
-                        <div style="flex:2.5; height:100%;"></div>
+                        <div style="flex:2; height:100%;"></div>
                     </div>
                 </div>
             </div>

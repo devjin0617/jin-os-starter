@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    {{ msg }}
+    <div style="width:100%; height:100vh; display:flex;">
+      <div style="flex:1;"></div>
+      <div style="width:400px; padding:10px;">
+        <div style="width:100%; height:150px; background-color:black; opacity:0.7; border-radius:10px; color:white; display:flex; align-items:center; justify-content:center;">
+          <span>여기는 시간 표시하는 곳</span>
+        </div>
+      </div>
+    </div>
     <StartupList/>
     <TaskBar />
   </div>
@@ -61,7 +68,6 @@ body,.startup-box-wrap::before {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 h1, h2 {

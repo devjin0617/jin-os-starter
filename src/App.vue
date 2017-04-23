@@ -4,7 +4,10 @@
       <div style="flex:1;"></div>
       <div style="width:400px; padding:10px;">
         <div style="width:100%; height:150px; background-color:black; opacity:0.7; border-radius:10px; color:white; display:flex; align-items:center; justify-content:center;">
-          <span>여기는 시간 표시하는 곳</span>
+          <div>
+            <div style="font-size:20px; text-align:left;">{{ date }}</div>
+            <div style="font-size:35px;">{{ time }}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -21,7 +24,9 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      date: this.$moment().format('YYYY.MM.DD'),
+      time: this.$moment().format('a h:mm:ss')
     }
   },
   created () {

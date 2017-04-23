@@ -26,15 +26,34 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       date: this.$moment().format('YYYY.MM.DD'),
-      time: this.$moment().format('a h:mm:ss')
+      time: this.$moment().format('a h:mm:ss'),
+      dateInterval: null,
+      timeInterval: null
     }
   },
   created () {
+    let vm = this
     // Store.setState('isOpen', false);
+    this.dateInterval = setInterval(() => {
+      vm.date = this.$moment().format('YYYY.MM.DD')
+    }, 1000 * 60)
+    this.timeInterval = setInterval(() => {
+      vm.time = this.$moment().format('a h:mm:ss')
+    }, 1000)
   },
   components: {
     StartupList,
     TaskBar
+  },
+  destroy () {
+    if (this.dateInterval) {
+      clearInterval(this.dateInterval)
+      this.dateInterval = null
+    }
+    if (this.timeInterval) {
+      clearInterval(this.timeInterval)
+      this.timeInterval = null
+    }
   }
 }
 </script>

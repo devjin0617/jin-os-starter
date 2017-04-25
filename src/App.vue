@@ -1,14 +1,22 @@
 <template>
   <div id="app">
-    <div style="width:100%; height:100vh; display:flex;">
+    <div style="width:100%; height:90vh; display:flex;">
       <div style="flex:1;"></div>
-      <div style="width:400px; padding:10px;">
+      <div style="width:400px; margin:10px; display:flex; flex-direction: column;">
+
         <div style="width:100%; height:150px; background-color:black; opacity:0.7; border-radius:10px; color:white; display:flex; align-items:center; justify-content:center;">
           <div>
             <div style="font-size:20px; text-align:left;">{{ date }}</div>
             <div style="font-size:35px;">{{ time }}</div>
           </div>
         </div>
+
+        <div style="margin-top:10px; width:100%; flex:1; background-color:black;border-radius:10px; color:white; display:flex; align-items:center; justify-content:center;">
+          <div>
+            <img src="./assets/fb_login.png" style="width:300px;">
+          </div>
+        </div>
+
       </div>
     </div>
     <StartupList/>
@@ -22,10 +30,17 @@ import StartupList from './components/StartupList'
 import Firebase from 'firebase'
 import config from './config'
 
-let app = Firebase.initializeApp(config.firebase)
+let fbApp = Firebase.initializeApp(config.firebase)
+let db = fbApp.database()
+let appsRef = db.ref('apps')
 
 export default {
   name: 'app',
+  firebase () {
+    return {
+      apps: appsRef
+    }
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',

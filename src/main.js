@@ -7,6 +7,10 @@ import store from './lib/store'
 import moment from 'moment'
 moment.locale('ko')
 
+import VueFire from 'vuefire'
+
+Vue.use(VueFire)
+
 Vue.config.productionTip = false
 Vue.prototype.$moment = moment
 

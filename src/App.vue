@@ -19,6 +19,10 @@
 <script>
 import TaskBar from './components/TaskBar'
 import StartupList from './components/StartupList'
+import Firebase from 'firebase'
+import config from './config'
+
+let app = Firebase.initializeApp(config.firebase)
 
 export default {
   name: 'app',
